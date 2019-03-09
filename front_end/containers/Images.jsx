@@ -3,7 +3,6 @@ import ReactDom from 'react-dom'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
 import Style from './App.css'
 
 // import { add_number, reduce_number } from '../../../modules/ActionCreater.js'

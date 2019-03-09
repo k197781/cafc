@@ -11,7 +11,6 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
-
 app.listen(app.get('port'), app.get('ip'), function () {
   console.log('localhost:3150')
 })
