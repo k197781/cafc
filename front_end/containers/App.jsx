@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { createStore } from 'redux'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { createHistory, useBasename } from "history";
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux'
 import Images from './Images.jsx'
