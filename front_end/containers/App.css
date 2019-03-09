@@ -1,0 +1,115 @@
+.imagesContainer{
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.imageItem img{
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* 画像を透過させて背景の黒を透けるようにする */
+.imageItemHoverCover{
+  background-color: black;
+}
+.imageItemHoverCover:hover img{
+  opacity: 0.6;
+  transition-duration: 0.3s;
+}
+
+/* マウスオーバー時の文字配置 */
+.imageItemHoverCover:hover{
+  position: relative;
+}
+.imageItemHoverString{
+  display: none;
+}
+.imageItemHoverCover:hover .imageItemHoverString{
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  color: rgb(255, 255,255, 0.8)
+  /* background-color: #fff;
+  padding: 0px 10px 0px 10px;
+  border-radius: 5px; */
+}
+ 
+@media screen and (min-width: 1200px) {
+.grid-container {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 15px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 3;
+  -moz-column-gap: 15px;
+  -moz-column-fill: balance !important;
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+ }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+.grid-container {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 15px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 3;
+  -moz-column-gap: 15px;
+  -moz-column-fill: balance !important;
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+ }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+.grid-container {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 15px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 3;
+  -moz-column-gap: 15px;
+  -moz-column-fill: balance !important;
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+ }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+.grid-container {
+  -webkit-column-count: 2;
+  -webkit-column-gap: 15px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 2;
+  -moz-column-gap: 15px;
+  -moz-column-fill: balance !important;
+  column-count: 2;
+  column-gap: 15px;
+  column-fill: auto;
+ }
+}
+@media screen and (max-width: 480px) {
+.grid-container {
+  -webkit-column-count: 1;
+  -webkit-column-gap: 15px;
+  -webkit-column-fill: auto;
+  -moz-column-count: 1;
+  -moz-column-gap: 15px;
+  -moz-column-fill: balance !important;
+  column-count: 1;
+  column-gap: 15px;
+  column-fill: auto;
+ }
+}
+.grid {
+ display: inline-block;
+ -webkit-column-break-inside: avoid;
+ -moz-column-break-inside: avoid;
+ break-inside: avoid;
+}
+/* Google Chorome BugFix */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+ .grid {
+  display: block !important;
+ }
+}

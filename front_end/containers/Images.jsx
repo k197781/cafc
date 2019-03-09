@@ -15,6 +15,9 @@ function update_images(images) {
 }
 
 class Images extends React.Component {
+  state = {
+    onMouse: false
+  }
 
   componentWillMount() {
     axios.get('https://wfc-2019.firebaseapp.com/images?limit=&offset=')
@@ -33,12 +36,19 @@ class Images extends React.Component {
 
   render () {
     return(
-      <div>
-        <ul>
+      <div className='imagesContainer'>
+        <ul class='imagesList grid-container'>
         {
           this.props.images.map(image =>
-            <li>
-              <img src={image.url} />
+            <li className='imageItem grid'>
+              <Link to={`/images/${image.id}`}>
+                <div className='imageItemHoverCover'>
+                  <img src={image.url} />
+                  <div className='imageItemHoverString'>
+                    {image.title}
+                  </div>
+                </div>
+              </Link>
             </li>
           )
         }
