@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"description": "",
 	"main": "webpack.config.js",
+	"homepage": "https://k197781.github.io/cawfc/",
 	"dependencies": {
 		"axios": "^0.18.0",
 		"babel-core": "^6.26.3",
@@ -36,7 +37,8 @@
 	"scripts": {
 		"start": "node server.js",
 		"dev": "webpack --watch --config webpack.config.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"deploy": "NODE_ENV=production webpack && gh-pages -d public"
 	},
 	"author": "",
 	"license": "ISC"
