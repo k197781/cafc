@@ -43,6 +43,15 @@ body{
   border-radius: 5px; */
 }
 
+.btn{
+  padding: 5px 10px 5px 10p;
+  text-decoration: none;
+  background: #E5E5E5;/*ボタン色*/
+  color: #FFF;
+  border-radius: 3px;
+}
+/* マウスオーバー時のボタン配置 */
+
 
 /* モーダルに関するスタイル */
 .imageModalString{

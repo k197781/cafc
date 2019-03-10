@@ -15,9 +15,12 @@ function update_images(images) {
 }
 
 class Images extends React.Component {
+  state = {
+    offsetImage: 0
+  }
 
   componentWillMount() {
-    axios.get('https://wfc-2019.firebaseapp.com/images?limit=&offset=')
+    axios.get('https://wfc-2019.firebaseapp.com/images?limit=500&offset=')
       .then(res => {
         this.props.updateImages(res.data.data.images)
       }).catch(err => {

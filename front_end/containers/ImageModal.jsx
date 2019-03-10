@@ -56,6 +56,22 @@ class ImageModal extends React.Component {
     this.props.history.push('/images')
   }
 
+  handleDownload = () => {
+    var url = this.state.image.url
+    var filename = this.state.image.id
+    var xhr = new XMLHttpRequest(),
+          a = document.createElement('a'), file;
+          xhr.open('GET', url, true);
+          xhr.responseType = 'blob';
+          xhr.onload = function () {
+              file = new Blob([this.response], { type : 'application/octet-stream' });
+              a.href = window.URL.createObjectURL(file);
+              a.download = filename;
+              a.click();
+          };
+          xhr.send();
+  }
+
   render () {
     return(
       <Modal
@@ -70,6 +86,9 @@ class ImageModal extends React.Component {
               {this.state.image.title}
             </div>
             <img src={this.state.image.url} />
+            <button className='btn' onClick={this.handleDownload} data-id={this.state.image.uuid}>
+              <i class="fas fa-chevron-down"></i>
+            </button>
             <div className='imageModalDescription'>
               {this.state.image.description}
             </div>
