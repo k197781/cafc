@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Style from './App.css'
-
+import ImageModal from './ImageModal'
 // import { add_number, reduce_number } from '../../../modules/ActionCreater.js'
 
 function update_images(images) {
@@ -15,9 +15,6 @@ function update_images(images) {
 }
 
 class Images extends React.Component {
-  state = {
-    onMouse: false
-  }
 
   componentWillMount() {
     axios.get('https://wfc-2019.firebaseapp.com/images?limit=&offset=')
@@ -36,24 +33,30 @@ class Images extends React.Component {
 
   render () {
     return(
-      <div className='imagesContainer'>
-        <ul class='imagesList grid-container'>
-        {
-          this.props.images.map(image =>
-            <li className='imageItem grid'>
-              <Link to={`/images/${image.id}`}>
-                <div className='imageItemHoverCover'>
-                  <img src={image.url} />
-                  <div className='imageItemHoverString'>
-                    {image.title}
+      <div className='imagesWrapper'>
+        <div className='imagesContainer'>
+          <ul class='imagesList grid-container'>
+          {
+            this.props.images.map(image =>
+              <li className='imageItem grid'>
+                <Link to={`/images/${image.id}`}>
+                  <div className='imageItemHoverCover'>
+                    <img src={image.url} />
+                    <div className='imageItemHoverString'>
+                      {image.title}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </li>
-          )
+                </Link>
+              </li>
+            )
+          }
+          </ul>
+        </div>
+        {
+          this.props.match.params.id &&
+          <ImageModal id={this.props.match.params.id} history={this.props.history}/>
         }
-        </ul>
-    </div>
+      </div>
     )
   }
 }

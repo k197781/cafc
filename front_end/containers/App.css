@@ -1,3 +1,10 @@
+img{
+  display: block;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+}
 .imagesContainer{
   max-width: 1320px;
   margin: 0 auto;
@@ -34,6 +41,26 @@
   /* background-color: #fff;
   padding: 0px 10px 0px 10px;
   border-radius: 5px; */
+}
+
+
+/* モーダルに関するスタイル */
+.imageModalString{
+  font-size: 1.6em;
+  margin: 10px 0 20px 50px;
+}
+
+.imageModalDescription{
+  margin-right: 50px;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.ReactModal__Content img{
+  margin: 0 auto;
+  max-height: 70vh;
+  max-width: 50vw;
+  margin: 0 auto;
 }
  
 @media screen and (min-width: 1200px) {

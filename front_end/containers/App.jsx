@@ -5,7 +5,6 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux'
 import Images from './Images.jsx'
-import ImageDetail from './ImageDetail.jsx'
 import reducers from '../modules/Reducers.js'
 
 const initialState = {
@@ -21,7 +20,7 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Images}/>
             <Route exact path='/images' component={Images}/>
-            <Route path='/images/:id' component={ImageDetail}/>
+            <Route path='/images/:id' component={Images}/>
           </Switch>
         </BrowserRouter >
       </Provider>
