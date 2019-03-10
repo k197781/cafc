@@ -7,17 +7,19 @@ module.exports = {
 	devtool: debug ? "inline-sourcemap" : false,
 	entry: "./index.js",
 	resolve: {
-		extensions: ['', '.js', '.jsx']
+		extensions: ['.js', '.jsx']
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: /(node_modules|bower_components)/,
 				loader: 'babel-loader',
-				query: {
-					presets: ['react', 'es2015', 'stage-0'],
-					plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
+				options: {
+					babelrc: false,
+					extends: './.babelrc',
+					plugins: ['react-html-attrs', 'transform-class-properties'],
+					cacheDirectory: true,
 				}
 			},
 			{
@@ -43,8 +45,6 @@ module.exports = {
 		filename: "index.min.js"
 	},
 	plugins: debug ? [] : [
-		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
 	],
 };
