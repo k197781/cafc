@@ -82,13 +82,16 @@ class ImageModal extends React.Component {
       {
         this.state.image &&
           <React.Fragment>
-            <div className='imageModalString'>
-              {this.state.image.title}
+            <div className='imageModalHead'>
+              <div className='imageModalHeadString'>
+                {this.state.image.title}
+                <button className='btn' onClick={this.handleDownload} data-id={this.state.image.uuid} type="submit">
+                  save
+                </button>
+              </div>
+              by {this.state.image.author}
             </div>
             <img src={this.state.image.url} />
-            <button className='btn' onClick={this.handleDownload} data-id={this.state.image.uuid}>
-              <i class="fas fa-chevron-down"></i>
-            </button>
             <div className='imageModalDescription'>
               {this.state.image.description}
             </div>
